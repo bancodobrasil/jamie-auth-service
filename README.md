@@ -1,5 +1,9 @@
 # Jamie Auth Service
 
+Alternative languages:
+
+[Leia a página em Português Brasileiro ![About_en](https://github.com/yammadev/flag-icons/blob/master/png/BR.png?raw=true)](https://github.com/bancodobrasil/jamie-auth-service/blob/develop/README-PTBR.md) 
+
 ## Description
 
 This project contains KeyCloak, which is necessary to set up the [Jamie API](https://github.com/bancodobrasil/jamie-api) and [Jamie UI](https://github.com/bancodobrasil/jamie-ui) projects.
