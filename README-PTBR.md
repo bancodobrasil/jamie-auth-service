@@ -21,7 +21,7 @@ Abra o terminal no projeto jamie auth service. Em seguida, rode o comando do Doc
 
 Em `localhost:8080`, carregará uma tela semelhante a a seguir:
 
-![Tela inicial Keycloa](img/telaInicial-keycloak.png)
+![Keycloak Initial Screen](img/keycloak-initial-screen.png)
 
 Clique em `Administration Console`, abrirá uma tela de login, digite na tela
 username: `admin` e password: `admin`. Se iniciará uma tela semelhante a a seguir:
@@ -30,17 +30,17 @@ username: `admin` e password: `admin`. Se iniciará uma tela semelhante a a segu
     Password: admin
 
 
-![Tela inicial Keycloa](img/keycloak-logado.png)
+![Keycloak Loggedin](img/logged-in-keycloak.png)
 
 Após isso, você precisará criar o `realm`. Para fazer isso, clique na área demarcada em vermelho na imagem. Sob a seção "Master", você encontrará a opção para criar um novo Realm. Ao abrir essa opção, a tela apresentará:
 
-![Criando Realm](img/criando-realm.png)
+![Criando Realm](img/creating-realm.png)
 
 Em **Realm name** digite `jamie`, em seguida clique em create. Na tela inicil do keycloak, no mesmo lugar em que foi clicado para criar um Realm aparecerá o Realm jamie que acabamos de criar, entre nele. 
 
 Em seguida no menu lateral clique em **Clients** e abrirá uma tela semelhante a seguir:
 
-![Tela inicial Keycloak](img/clients-menu.png)
+![Clients Menu](img/clients-menu.png)
 
 Clique em **Create Client**, iremos criar dois clientes, um para a Jamie UI e outro para Jamie API.
 
@@ -135,7 +135,7 @@ Preencha os campos com os seguintes dados:
 No menu lateral, cliente en **Users**, em seguida clique em **Add user**, como na imagem a seguir:
 
 
-![Tela inicial Keycloak](img/users.png)
+![Users](img/users.png)
 
 Em **Username** digite um nome de usuário que você deseja, e habilite **Email verified**, não é necessário adicionar seu e-mail, apenas se você quiser.
 

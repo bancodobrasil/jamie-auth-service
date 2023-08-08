@@ -6,7 +6,7 @@ Alternative languages:
 
 ## Description
 
-This project contains KeyCloak, which is necessary to set up the [Jamie API](https://github.com/bancodobrasil/jamie-api) and [Jamie UI](https://github.com/bancodobrasil/jamie-ui) projects.
+This project contains Keycloak, which is necessary to set up the [Jamie API](https://github.com/bancodobrasil/jamie-api) and [Jamie UI](https://github.com/bancodobrasil/jamie-ui) projects.
 
 ## Dependencies
 
@@ -32,6 +32,11 @@ Click on `Administration Console`, and a login screen will open. Enter the follo
     Username: admin
     Password: admin
 
+
+
+![Keycloak Initial Screen](img/loggedin-keycloak.png)
+
+
 Afterward, you will need to create the `realm`. To do this, click on the area marked in red in the image. Under the "Master" section, you will find the option to create a new Realm. Upon opening this option, the screen will display:
 
 ![Creating Realm](img/creating-realm.png)
@@ -40,9 +45,12 @@ In **Realm name**, type `jamie`, then click create. On the initial Keycloak scre
 
 Next, in the side menu, click on **Clients**, and a screen similar to the following will open:
 
-![Keycloak Clients Menu](img/keycloak-clients-menu.png)
+
+![Clients Menu](img/clients-menu.png)
 
 Click on **Create Client**, and we will create two clients, one for Jamie UI and another for Jamie API.
+
+
 
 ### Jamie UI Client Configuration
 Fill in the fields with the following data:
@@ -132,7 +140,7 @@ Fill in the fields with the following data:
 
 In the side menu, under **Users**, click on **Add user**, as shown in the image below:
 
-![Keycloak Users](img/keycloak-users.png)
+![Keycloak Users](img/users.png)
 
 In **Username**, type a username you desire, and enable **Email verified**. Adding your email is optional.
 
