@@ -2,13 +2,21 @@
 
 ## Descrição
 
-Este projeto contém o KeyCloak, necessário para subir os projetos [Jamie API](https://github.com/bancodobrasil/jamie-api) e [Jamie UI](https://github.com/bancodobrasil/jamie-ui)
+Este projeto contém o Keycloak, necessário para subir os projetos [Jamie API](https://github.com/bancodobrasil/jamie-api) e [Jamie UI](https://github.com/bancodobrasil/jamie-ui)
 
 ## Dependências
 
 - [Docker](https://www.docker.com/)
 
 ## Instalação
+
+### Com o Docker Compose (Recomendado)
+
+O projeto [Jamie UI](https://github.com/bancodobrasil/jamie-ui) já contém um arquivo `docker-compose.yaml`, o que tornará mais fácil executar o Keycloak em um ambiente local.
+
+Você pode verificar o comando para iniciar o serviço Keycloak do docker-compose no repositório do projeto anterior.
+
+### Com o Docker
 
 Abra o terminal no projeto jamie auth service. Em seguida, rode o comando do Docker: 
 
@@ -17,7 +25,7 @@ Abra o terminal no projeto jamie auth service. Em seguida, rode o comando do Doc
  docker run -d -p 8080:8080 --name keycloak keycloak
 ```
 
-## Configurando o KeyCloak
+## Configurando o Keycloak
 
 Em `localhost:8080`, carregará uma tela semelhante a a seguir:
 
@@ -29,14 +37,16 @@ username: `admin` e password: `admin`. Se iniciará uma tela semelhante a a segu
     Username: admin
     Password: admin
 
+Após isso, você precisará criar o `realm`. Para fazer isso, clique na área demarcada em vermelho na imagem. Sob a seção "Master", você encontrará a opção para criar um novo Realm.
 
 ![Keycloak Loggedin](img/logged-in-keycloak.png)
 
-Após isso, você precisará criar o `realm`. Para fazer isso, clique na área demarcada em vermelho na imagem. Sob a seção "Master", você encontrará a opção para criar um novo Realm. Ao abrir essa opção, a tela apresentará:
+Ao abrir essa opção, a tela apresentará:
 
-![Criando Realm](img/creating-realm.png)
+![Creating Realm](img/creating-realm.png)
 
-Em **Realm name** digite `jamie`, em seguida clique em create. Na tela inicil do keycloak, no mesmo lugar em que foi clicado para criar um Realm aparecerá o Realm jamie que acabamos de criar, entre nele. 
+Em **Realm name** digite `jamie`, em seguida clique em create. Na tela inicial do Keycloak, no mesmo lugar em que foi clicado para criar um Realm aparecerá o Realm jamie que acabamos de criar, entre nele. 
+
 
 Em seguida no menu lateral clique em **Clients** e abrirá uma tela semelhante a seguir:
 
@@ -57,7 +67,7 @@ Preencha os campos com os seguintes dados:
         - http://localhost:3000/*
         - http://localhost/*
 
-    - **Valid post logout redurect URIs**: 
+    - **Valid post logout redirect URIs**: 
         - http://localhost:80/* 
         - http://localhost:3000/*
         - http://localhost/*
@@ -74,8 +84,8 @@ Preencha os campos com os seguintes dados:
     - Authorization
     
     **Habilite(ON)**:
-    - Standart flow
-    - Direct aceess grants
+    - Standard flow
+    - Direct access grants
 
 ### Configuração Client Jamie API
 Preencha os campos com os seguintes dados:
@@ -99,8 +109,8 @@ Preencha os campos com os seguintes dados:
     - Authorization
     
     **Desmarque**:
-    - Standart flow
-    - Direct aceess grants
+    - Standard flow
+    - Direct access grants
 
 ### Configuração Realm Roles
 
@@ -116,17 +126,17 @@ Preencha os campos com os seguintes dados:
 
 #### Editor
 1. **Role name**: editor
-2. Em **Action** clique em **Add associated roles**, em seguida clique no role do `reader`, que criamos, e em **Assing**
+2. Em **Action** clique em **Add associated roles**, em seguida clique no role do `reader`, que criamos, e em **Assign**
 3. Salve
 
 #### Manager
-1. **Role name**: editor
-2. Em **Action** clique em **Add associated roles**, em seguida clique no role do `reader` e `editor`, que criamos, e em **Assing**
+1. **Role name**: manager
+2. Em **Action** clique em **Add associated roles**, em seguida clique no role do `reader` e `editor`, que criamos, e em **Assign**
 3. Salve
 
 #### Admin
-1. **Role name**: editor
-2. Em **Action** clique em **Add associated roles**, em seguida clique no role do `reader`, `editor` e `manager`, que criamos, e em **Assing**
+1. **Role name**: admin
+2. Em **Action** clique em **Add associated roles**, em seguida clique no role do `reader`, `editor` e `manager`, que criamos, e em **Assign**
 3. Salve
 
 
@@ -143,9 +153,9 @@ Em seguida, clique em **Credentials** e **Set password**.
 
 ![Set Password](img/set-password.png)
 
-Preencha a senha e a confirmação da senha e desabilite o campo de **Temporary**. Em seguida, clique em **Role mapping**, que está ao lado de **Credencials**. Em seguida clique em `admin` e em **Assign**.
+Preencha a senha e a confirmação da senha e desabilite o campo de **Temporary**. Em seguida, clique em **Role mapping**, que está ao lado de **Credentials**. Em seguida clique em `admin` e em **Assign**.
 
-Com isso, quando entrar no Jamie será necessário colocar o usuário e a senha que você cadastrou.
+Com isso, quando entrar no Jamie UI será necessário colocar o usuário e a senha que você cadastrou.
 
 
 

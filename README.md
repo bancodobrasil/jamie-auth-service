@@ -13,6 +13,13 @@ This project contains Keycloak, which is necessary to set up the [Jamie API](htt
 - [Docker](https://www.docker.com/)
 
 ## Installation
+### With Docker Compose (Recommended)
+
+The [Jamie UI](https://github.com/bancodobrasil/jamie-ui) project already contains a `docker-compose.yaml` file, which will make easier to run Keycloak in local environment.
+
+You can check the command to start the docker compose Keycloak service in the repository of the previous.
+
+### With Docker 
 
 Open the terminal in the Jamie Auth Service project directory. Then, run the Docker command:
 
@@ -21,7 +28,7 @@ docker build -t keycloak .
 docker run -d -p 8080:8080 --name keycloak keycloak
 ```
 
-## Setting Up KeyCloak
+## Setting Up Keycloak
 
 In `localhost:8080`, a screen similar to the following will load:
 
@@ -32,12 +39,11 @@ Click on `Administration Console`, and a login screen will open. Enter the follo
     Username: admin
     Password: admin
 
+Afterward, you will need to create the `realm`. To do this, click on the area marked in red in the image. Under the "Master" section, you will find the option to create a new Realm.
 
+![Logged-in Keycloak](img/logged-in-keycloak.png)
 
-![Keycloak Initial Screen](img/loggedin-keycloak.png)
-
-
-Afterward, you will need to create the `realm`. To do this, click on the area marked in red in the image. Under the "Master" section, you will find the option to create a new Realm. Upon opening this option, the screen will display:
+Upon opening this option, the screen will display:
 
 ![Creating Realm](img/creating-realm.png)
 
@@ -150,7 +156,7 @@ Next, click on **Credentials** and **Set password**.
 
 Enter the password and password confirmation, and disable the **Temporary** field. Then, click on **Role mapping**, which is next to **Credentials**. Click on `admin`, then click on **Assign**.
 
-With this, when you enter Jamie, you'll need to enter the username and password you created.
+With this, when you enter Jamie UI, you'll need to enter the username and password you created.
 
 ### Jamie API and UI
 
